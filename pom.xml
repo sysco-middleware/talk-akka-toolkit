@@ -7,6 +7,13 @@
   <groupId>no.sysco.middleware.talk</groupId>
   <artifactId>talk-akka-toolkit</artifactId>
   <version>0.1.0-SNAPSHOT</version>
+  <modules>
+    <module>hello-world-actors</module>
+    <module>hello-world-streams</module>
+    <module>hello-world-http</module>
+    <module>akka-toolkit-showcase</module>
+  </modules>
+  <packaging>pom</packaging>
 
   <name>Talk: Akka toolkit</name>
   <url>https://github.com/sysco-middleware/talk-akka-toolkit</url>
@@ -15,9 +22,29 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+
+    <scala.version>2.12</scala.version>
+    <akka.version>2.5.16</akka.version>
+    <akka.http.version>10.1.5</akka.http.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-actor_${scala.version}</artifactId>
+      <version>${akka.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-stream_${scala.version}</artifactId>
+      <version>${akka.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-http_${scala.version}</artifactId>
+      <version>${akka.http.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
